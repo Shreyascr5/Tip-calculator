@@ -9,6 +9,9 @@ tipSlider.oninput = function() {
     val.innerHTML = this.value;
     billrs = billinput.value;
     tipPercent = (val.innerHTML / 100) * billrs;
-
-    finalBill.innerText = "₹" + tipPercent;
+    if (val.innerHTML == 0) {
+        finalBill.innerText = "₹" + billrs;
+    } else {
+        finalBill.innerText = "₹" + tipPercent;
+    }
 }
